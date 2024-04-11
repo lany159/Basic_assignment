@@ -13,11 +13,11 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.Job
 
 
-class Text1Activity : AppCompatActivity() {
+class Basic1WeekActivity : AppCompatActivity() {
     private var job: Job? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_test1)
+        setContentView(R.layout.activity_basic1_week)
 
         setRandomValueBetweenOneToHundred()
         setupButton()

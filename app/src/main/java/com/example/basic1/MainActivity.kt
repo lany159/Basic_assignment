@@ -1,24 +1,34 @@
 package com.example.basic1
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.LinearLayout
+import com.example.basic1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val btn = findViewById<LinearLayout>(R.id.btn_click)
-        val btn2 = findViewById<LinearLayout>(R.id.btn1_click)
-//include는 참조하는 태그일뿐 뷰가 아니기 때문에  findViewById로 사용할 수 없음
-        btn.setOnClickListener {
-            val intent = Intent(this, Text1Activity::class.java)
+        val btn2 = findViewById<Button>(R.id.btn_click2)
+        val btn3 = findViewById<Button>(R.id.btn_click3)
+
+        binding.btnClick.setOnClickListener {
+            val intent = Intent(this, Basic1WeekActivity::class.java)
             startActivity(intent)
         }
         btn2.setOnClickListener {
-            val intent = Intent(this, Text2Activity::class.java)
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://hyelan-note.tistory.com/128"))
+            startActivity(intent)
+        }
+        btn3.setOnClickListener {
+            val intent = Intent(this, Basic3WeekActivity::class.java)
             startActivity(intent)
         }
     }
