@@ -4,5 +4,6 @@
     <string name="textview_basic">Basic 과제 리스트</string>
     <string name="textview_2week">2주차 과제</string>
     <string name="textview_1week">1주차 과제</string>
+    <string name="textview_4week">4주차 과제</string>
 
 </resources>

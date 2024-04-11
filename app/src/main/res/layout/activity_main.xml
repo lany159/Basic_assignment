@@ -74,10 +74,19 @@
         layout="@layout/second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+
         app:layout_constraintEnd_toEndOf="@id/btn_click"
         app:layout_constraintStart_toStartOf="@id/btn_click"
         app:layout_constraintTop_toBottomOf="@id/btn_click" />
+
+    <include
+        android:id="@+id/btn_click3"
+        layout="@layout/third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/btn_click2"
+        app:layout_constraintStart_toStartOf="@id/btn_click2"
+        app:layout_constraintTop_toBottomOf="@id/btn_click2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
