@@ -34,21 +34,16 @@ class Basic3WeekActivity : AppCompatActivity() {
             if (counter > 100) {
                 counter = 100
             }
-            binding.spartaTextView.text = counter.toString()
+            setSpartaTextView()
 
             isChecked = savedInstanceState.getBoolean("isCheck")
             if (isChecked == true) {
-                binding.spartaTextView.text = counter.toString()
+                setSpartaTextView()
             }
-            Log.i(TAG, "$isChecked")
-            Log.i(TAG, "$counter")
-            Log.i(TAG, "$randomValue")
-
         }
 
         setupButton()
         setRandomValueBetweenOneToHundred()
-//        setJobAndLaunch()
     }
 
     override fun onRestart() {
@@ -113,10 +108,9 @@ class Basic3WeekActivity : AppCompatActivity() {
         job = lifecycleScope.launch {
             if (isActive) {
                 while (counter <= 100) {
-                    binding.spartaTextView.text = counter.toString()
+                    setSpartaTextView()
                     if (isChecked == true) {
                         break
-                        //job?.cancel()
                     }
                     delay(500)
                     counter += 1
@@ -134,5 +128,9 @@ class Basic3WeekActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun setSpartaTextView(){
+        binding.spartaTextView.text = counter.toString()
     }
 }
