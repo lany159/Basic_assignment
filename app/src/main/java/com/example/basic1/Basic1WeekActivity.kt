@@ -26,7 +26,7 @@ class Basic1WeekActivity : AppCompatActivity() {
     private fun setupButton() {
         val button = findViewById<Button>(R.id.clickButton)
         button.setOnClickListener {
-            Log.d("activity", "stop")
+
             job?.cancel()
             checkAnswerAndShowToast()
         }

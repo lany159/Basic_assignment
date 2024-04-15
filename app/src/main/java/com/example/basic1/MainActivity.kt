@@ -16,18 +16,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val btn2 = findViewById<Button>(R.id.btn_click2)
-        val btn3 = findViewById<Button>(R.id.btn_click3)
-
         binding.btnClick.setOnClickListener {
             val intent = Intent(this, Basic1WeekActivity::class.java)
             startActivity(intent)
         }
-        btn2.setOnClickListener {
+
+        binding.btnClick2.btn1Click.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://hyelan-note.tistory.com/128"))
             startActivity(intent)
         }
-        btn3.setOnClickListener {
+
+        binding.btnClick3.btn1Click.setOnClickListener {
             val intent = Intent(this, Basic3WeekActivity::class.java)
             startActivity(intent)
         }
